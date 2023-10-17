@@ -1,27 +1,18 @@
-import React from 'react';
-import Contact from './components/contact/Contact';
-import Experience from './components/experience/Experience';
-import Footer from './components/footer/Footer';
-import Header from './components/header/Header';
-import Intro from './components/intro/Intro';
-import Portfolio from './components/portfolio/Portfolio';
-import Testimonials from './components/testimonials/Testimonials';
-import Topbar from './components/topbar/Topbar';
+// App.js
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import ThankYou from "./components/thankyoumsg/Thankyou";
 
-
-const App = () => {
+function App() {
   return (
-    <>
-      <Header />
-      <Topbar />
-      <Intro />
-      <Experience />
-      <Portfolio />
-      <Testimonials />
-      <Contact />
-      <Footer />
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/thankyou/:name" element={<ThankYou />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
